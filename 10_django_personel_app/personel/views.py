@@ -11,19 +11,19 @@ from rest_framework.permissions import IsAuthenticated
 class DepartmanListCreate(generics.ListCreateAPIView):
     queryset = Departman.objects.all()
     serializer_class = DepartmanSerializer
-    permission_classes = [IsAuthenticated, IsStaffOrReadOnly]
+    # permission_classes = [IsAuthenticated, IsStaffOrReadOnly]
 
 
 class PersonelListCreate(generics.ListCreateAPIView):
     queryset = Personel.objects.all()
     serializer_class = PersonelSerializer
-    permission_classes = [IsStaffOrReadOnly, IsAuthenticated]
+    # permission_classes = [IsStaffOrReadOnly, IsAuthenticated]
 
 
 class PersonelUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Personel.objects.all()
     serializer_class = PersonelSerializer
-    permission_classes = [IsOwnerOrReadOnly, IsAuthenticated]
+    # permission_classes = [IsOwnerOrReadOnly, IsAuthenticated]
 
 
 class DepartmanPersonelView(generics.ListAPIView):
